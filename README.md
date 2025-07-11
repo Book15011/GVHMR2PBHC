@@ -64,9 +64,7 @@ PBHC/
   ```
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia python robot_motion_process/vis_q_mj.py +motion_file=/path/to/your.pkl
 ```
-![hippo](https://github.com/Book15011/GVHMR2PBHC/blob/main/Screencast%20from%202025%E5%B9%B407%E6%9C%8811%E6%97%A5%2011%E6%97%B640%E5%88%8633%E7%A7%92%20(online-video-cutter.com)(1).gif)
-
-ffe
+![hippo]()
 ### 7. Train Motion (Back to [PBHC](https://github.com/TeleHuman/PBHC/blob/main/humanoidverse/README.md) Environment and Pipeline) 
 ```
 python humanoidverse/train_agent.py \
