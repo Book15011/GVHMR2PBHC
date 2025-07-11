@@ -67,8 +67,6 @@ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia python robot_motion
 ![hippo](https://github.com/Book15011/GVHMR2PBHC/blob/main/Visual_Moton_PKL.gif)
 
 
-https://github.com/user-attachments/assets/545ac618-4f50-4304-9da8-c9fb1dd77528
-
 
 
 ### 7. Train Motion (Back to [PBHC](https://github.com/TeleHuman/PBHC/blob/main/humanoidverse/README.md) Environment and Pipeline) 
