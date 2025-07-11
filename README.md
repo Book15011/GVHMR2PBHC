@@ -9,9 +9,11 @@
 
 ## 🛠️ Step-by-Step Guide
 
-### 1. Run GVHMR Motion Extraction (https://github.com/zju3dv/GVHMR) 
+### 1. Run GVHMR Motion Extraction [GVHMR](https://github.com/zju3dv/GVHMR) 
+#### Input: input/my_video
 ```bash
 python tools/demo/demo.py --video=/path/to/input.mp4 -s
-'''
+```
+
 # Output: output/demo/
-  contains: Visualized MP4 & .pt files (SMPL motion data)
+  Should contains: Visualized MP4 & .pt files (SMPL motion data)
