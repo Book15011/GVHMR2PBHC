@@ -14,6 +14,8 @@
 python tools/demo/demo.py --video=/path/to/input.mp4 -s
 ```
 
+![hippo](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
+
 #### Output: output/demo/
   Should contains: Visualized MP4 & .pt files (SMPL motion data)
 
