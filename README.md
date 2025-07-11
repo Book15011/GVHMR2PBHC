@@ -1,5 +1,4 @@
-# GVHMR2PBHC
-# GVHMR → PBHC Motion Processing Pipeline
+# GVHMR2PBHC PBHC Motion Processing Pipeline
 
 
 ## 🔄 Workflow Summary (All Converting & Retargeting in GVHMR environment)
