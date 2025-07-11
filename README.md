@@ -1,7 +1,6 @@
 # GVHMR2PBHC
 # GVHMR → PBHC Motion Processing Pipeline
 
-![Pipeline Diagram](https://via.placeholder.com/800x200?text=GVHMR+.pt+→+NPZ+→+PBHC+Retargeting)
 
 ## 🔄 Workflow Summary
 1. **GVHMR Extraction**: MP4 → SMPL (.pt)  
@@ -10,6 +9,9 @@
 
 ## 🛠️ Step-by-Step Guide
 
-### 1. Run GVHMR Motion Extraction
+### 1. Run GVHMR Motion Extraction (https://github.com/zju3dv/GVHMR) 
 ```bash
 python tools/demo/demo.py --video=/path/to/input.mp4 -s
+
+# Output: output/demo/
+  contains: Visualized MP4 & .pt files (SMPL motion data)
