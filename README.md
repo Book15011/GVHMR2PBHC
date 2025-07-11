@@ -64,7 +64,7 @@ PBHC/
   ```
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia python robot_motion_process/vis_q_mj.py +motion_file=/path/to/your.pkl
 ```
-![hippo](https://github.com/Book15011/GVHMR2PBHC/blob/main/Visual_Moton_PKL.gif)
+![hippo](https://github.com/Book15011/GVHMR2PBHC/main/Visual_Moton_PKL(1).gif)
 
 
 
