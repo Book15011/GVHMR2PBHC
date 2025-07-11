@@ -39,7 +39,7 @@ python Checker.py
 Should get results like this **betas shape: (10,), poses shape: (235, 72), trans shape: (235, 3), gender: neutral**
 
 ### 5. Convert NPZ to Retargeted Motion (PBHC Project)
-Use convert_fit_V2.py
+Use convert_fit_V2.py. Download to IsaacGym_Preview_4_Package/PBHC/smpl_retarget/mink_retarget
 ```
 python mink_retarget/convert_fit_motion_V2.py /path/to/PBHC/example/motion_data/
 ```
