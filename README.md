@@ -77,8 +77,6 @@ seed=1 \
 ```
 
 ## Environment Notes:
-
-    Steps 1-6: Use GVHMR environment
-
-    Step 7: Use PBHC environment
+Steps 1-6: Use GVHMR environment
+Step 7: Use PBHC environment
 
