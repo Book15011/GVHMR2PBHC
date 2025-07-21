@@ -10,6 +10,8 @@
 
 ### 1. Run GVHMR Motion Extraction [GVHMR](https://github.com/zju3dv/GVHMR) 
 #### Input: input/my_video
+**FPS: of mp4 must be 30 if not used some online tools to change it frist** 
+Check [FPS](https://getrecut.com/variable-frame-rate-check/)
 ```bash
 python tools/demo/demo.py --video=/path/to/input.mp4 -s
 ```
