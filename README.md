@@ -127,9 +127,10 @@ You can modified the code to Locked some parts yourself this is **Label of Each 
 
 
 
- Calculate Formula (**!!Consider the max angle of that Joint. Exceed it will damage the motor!!"")
-
-**Angle_rad=Angle_deg×(180 / pi)**   
+ Calculate Formula (**!!Consider the max angle of that Joint. Exceed it will damage the motor!!""**)
+```
+Angle_rad=Angle_deg×(180 / pi)**   
+```
 
 **Key Features:**
   - Humanly Impossible Motions (Example: 90° waist twists without leg movement. How? The script preserves original joint angles mathematically, even if biomechanically unrealistic.)
@@ -137,9 +138,17 @@ You can modified the code to Locked some parts yourself this is **Label of Each 
 
 Example (legs_static_waist_dynamic)
 
+### 7. Motion Inspection
+Use motion_readpkl_V2.py (updated from original) to debug motion files:
+```
+# Full analysis
+python motion_readpkl_V2.py /path/to/motion.pkl --output analysis.txt
 
+# Extract specific data
+python motion_readpkl_V2.py /path/to/motion.pkl --output data.csv --keys dof,root_trans_offse
+```
 
-### 7. Motion Smoothing & Interpolation (Same files from PBHC)
+### 8. Motion Smoothing & Interpolation (Same files from PBHC)
 Use motion_interpolation_pkl.py to add smooth transitions:
 ```
 python motion_interpolation_pkl.py \
@@ -150,7 +159,7 @@ python motion_interpolation_pkl.py \
 ```
 Creates _inter files with smooth start/end transitions
 
-### 8. Visualize Results
+### 9. Visualize Results
   ```
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia python robot_motion_process/vis_q_mj.py +motion_file=/path/to/your.pkl
 ```
@@ -159,7 +168,7 @@ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia python robot_motion
 
 
 
-### 7. Train Motion (Back to [PBHC](https://github.com/TeleHuman/PBHC/blob/main/humanoidverse/README.md) Environment and Pipeline) 
+### 10. Train Motion (Back to [PBHC](https://github.com/TeleHuman/PBHC/blob/main/humanoidverse/README.md) Environment and Pipeline) 
 ```
 python humanoidverse/train_agent.py \
 +simulator=isaacgym +exp=motion_tracking +terrain=terrain_locomotion_plane \
