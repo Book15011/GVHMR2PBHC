@@ -1,9 +1,9 @@
-# 🚀 GVHMR2PBHC Motion Processing Pipeline (+ Enhanced Stability for Unitree G1 Training)
+# 🚀 GVHMR2PBHC Pipeline (+ Enhanced Stability for Unitree G1 Training)
 
-## 🆕 New Post-Retargeting Processing Steps
+## 🆕 New Post-Retargeting Processing
 ### 🧠 Core Idea: Selective Motion Locking
-**Problem**: Full-body motion causes instability during RL training  
-**Solution**: Smart Partial Motion Freezing "Lock only the non-essential motion components while preserving key expressive movements"
+Problem: Full-body motion causes instability during RL training  
+Solution: Smart Partial Motion Freezing "Lock only the non-essential motion components while preserving key expressive movements"
 
 ## 🔄 Workflow Summary (All Converting & Retargeting in GVHMR environment)
 1. **GVHMR Extraction**: MP4 → SMPL (.pt)  
