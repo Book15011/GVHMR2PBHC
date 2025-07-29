@@ -129,7 +129,7 @@ You can modified the code to Locked some parts yourself this is **Label of Each 
 
  Calculate Formula (**!!Consider the max angle of that Joint. Exceed it will damage the motor!!""**)
 ```
-Angle_rad=Angle_deg×(180 / pi)**   
+Angle_rad=Angle_deg×(180 / pi)
 ```
 
 **Key Features:**
