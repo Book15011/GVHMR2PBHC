@@ -139,6 +139,7 @@ Angle_rad=Angle_deg×(180 / pi)
 Example (legs_static_waist_dynamic)
 
 ![hippo](https://github.com/user-attachments/assets/e42947f4-0823-4d4c-b6e3-317db37d3def)
+![BA_Lock_LEG-ezgif com-video-to-gif-converter(1)](https://github.com/user-attachments/assets/3e0cc19e-22d3-4e04-9ab6-b5872a14be3b)
 
 ### 7. Motion Inspection
 Use motion_readpkl_V2.py (updated from original) to debug motion files:
