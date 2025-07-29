@@ -184,7 +184,7 @@ seed=1 \
 ```
 
 ## Environment Notes:
-Steps 1-6: Use GVHMR environment
+Steps 1-9: Use GVHMR environment
 
-Step 7: Use PBHC environment
+Step 10: Use PBHC environment
 
