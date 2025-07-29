@@ -37,14 +37,7 @@ Run Openpt.py to verify the PT files structure:
 ```
  python Openpt.py #change path inside .py file
 ```
-Expected output: Main Dictionary keys: ['smpl_params_global', 'smpl_params_incam', 'K_fullimg', 'net_outputs']| Option                                                                                            | What It                              | Best For                                                                       |   |   |
-|---------------------------------------------------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------|---|---|
-| lower                                                                                             | Legs (0-11)                          | Focus on upper body movements                                                  |   |   |
-| upper                                                                                             | Arms/Waist (12-22)                   | Focus on lower body movements                                                  |   |   |
-| root                                                                                              | Root position/rotation only          | Stationary upper+lower body                                                    |   |   |
-| all                                                                                               | Everything (full freeze)             | Debugging                                                                      |   |   |
-| legs_and_root                                                                                     | Legs + Full root (position+rotation) | Ultra-stable locomotion                                                        |   |   |
-| legs_static_waist_dynamic                                                                         | Legs                                 | Focue on upper body (waist can move only 2 legs freezed, different from lower) |   |   |
+Expected output: Main Dictionary keys: ['smpl_params_global', 'smpl_params_incam', 'K_fullimg', 'net_outputs']
 
 ### 3. Convert PT to NPZ
 Use converterV4.py: Modify input/output paths at bottom of the script
@@ -89,7 +82,7 @@ python modify_motion.py /path/to/retargeted.pkl \
 
 **Options: lower, upper, root, all, legs_and_root, legs_static_waist_dynamic (modifiable to fix parts you want)**
 
-| Option                                                                                            | What It                              | Best For                                                                       |   |   |
+| Option                                                                                            | What It                              | Best For                                                                       |   
 |---------------------------------------------------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------|
 | lower                                                                                             | Legs (0-11)                          | Focus on upper body movements                                                  |
 | upper                                                                                             | Arms/Waist (12-22)                   | Focus on lower body movements                                                  |
