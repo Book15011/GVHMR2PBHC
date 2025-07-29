@@ -158,7 +158,6 @@ python motion_interpolation_pkl.py \
   --origin_file_name /path/to/Motion_modification.pkl \
   --start_inter_frame 30 \
   --end_inter_frame 30 \
-  --knee_modify True
 ```
 Creates _inter files with smooth start/end transitions
 
