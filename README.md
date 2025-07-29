@@ -139,7 +139,7 @@ Angle_rad=Angle_deg×(180 / pi)
 Example (legs_static_waist_dynamic)
 
 ![hippo](https://github.com/Book15011/GVHMR2PBHC/blob/main/BA_Lock.gif)
-
+![hippo](https://github.com/Book15011/GVHMR2PBHC/blob/main/Visual_Moton_PKL(1).gif)
 
 ### 7. Motion Inspection
 Use motion_readpkl_V2.py (updated from original) to debug motion files:
