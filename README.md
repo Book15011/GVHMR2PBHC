@@ -9,10 +9,10 @@
 1. **GVHMR Extraction**: MP4 → SMPL (.pt)  
 2. **Format Conversion**: .pt → .npz
 3. **PBHC Retargeting**: .npz → Training-ready .pkl
-4.**🆕 Enhanced Stability**: .pkl → .pkl
-5.**Motion Smoothing (motion_interpolation_pkl.py)**: pkl → .pkl (+ intro transition frame)
-6.**Visualization (vis_q_mj.py)**
-7.**Training (train_agent.py)**
+4. **🆕 Enhanced Stability**: .pkl → .pkl
+5. **Motion Smoothing (motion_interpolation_pkl.py)**: pkl → .pkl (+ intro transition frame)
+6. **Visualization (vis_q_mj.py)**
+7. **Training (train_agent.py)**
 
 
 
