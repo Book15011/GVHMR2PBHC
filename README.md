@@ -136,7 +136,7 @@ Angle_rad=Angle_deg×(180 / pi)
   - Humanly Impossible Motions (Example: 90° waist twists without leg movement. How? The script preserves original joint angles mathematically, even if biomechanically unrealistic.)
   - Gradual Control Adjust --split-index to change where "upper" and "lower" body split (default=12).
 
-Example (legs_static_waist_dynamic)
+**Example** (legs_static_waist_dynamic)
 
 ![hippo](https://github.com/Book15011/GVHMR2PBHC/blob/main/BA_Lock.gif)
 
