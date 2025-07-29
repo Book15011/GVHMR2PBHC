@@ -37,7 +37,14 @@ Run Openpt.py to verify the PT files structure:
 ```
  python Openpt.py #change path inside .py file
 ```
-Expected output: Main Dictionary keys: ['smpl_params_global', 'smpl_params_incam', 'K_fullimg', 'net_outputs']
+Expected output: Main Dictionary keys: ['smpl_params_global', 'smpl_params_incam', 'K_fullimg', 'net_outputs']| Option                                                                                            | What It                              | Best For                                                                       |   |   |
+|---------------------------------------------------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------|---|---|
+| lower                                                                                             | Legs (0-11)                          | Focus on upper body movements                                                  |   |   |
+| upper                                                                                             | Arms/Waist (12-22)                   | Focus on lower body movements                                                  |   |   |
+| root                                                                                              | Root position/rotation only          | Stationary upper+lower body                                                    |   |   |
+| all                                                                                               | Everything (full freeze)             | Debugging                                                                      |   |   |
+| legs_and_root                                                                                     | Legs + Full root (position+rotation) | Ultra-stable locomotion                                                        |   |   |
+| legs_static_waist_dynamic                                                                         | Legs                                 | Focue on upper body (waist can move only 2 legs freezed, different from lower) |   |   |
 
 ### 3. Convert PT to NPZ
 Use converterV4.py: Modify input/output paths at bottom of the script
@@ -79,51 +86,56 @@ python modify_motion.py /path/to/retargeted.pkl \
   --fix-part lower \
   --split-index
 ```
+
 **Options: lower, upper, root, all, legs_and_root, legs_static_waist_dynamic (modifiable to fix parts you want)**
 
 | Option                                                                                            | What It                              | Best For                                                                       |   |   |
-|---------------------------------------------------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------|---|---|
-| lower                                                                                             | Legs (0-11)                          | Focus on upper body movements                                                  |   |   |
-| upper                                                                                             | Arms/Waist (12-22)                   | Focus on lower body movements                                                  |   |   |
-| root                                                                                              | Root position/rotation only          | Stationary upper+lower body                                                    |   |   |
-| all                                                                                               | Everything (full freeze)             | Debugging                                                                      |   |   |
-| legs_and_root                                                                                     | Legs + Full root (position+rotation) | Ultra-stable locomotion                                                        |   |   |
-| legs_static_waist_dynamic                                                                         | Legs                                 | Focue on upper body (waist can move only 2 legs freezed, different from lower) |   |   |
+|---------------------------------------------------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------|
+| lower                                                                                             | Legs (0-11)                          | Focus on upper body movements                                                  |
+| upper                                                                                             | Arms/Waist (12-22)                   | Focus on lower body movements                                                  |
+| root                                                                                              | Root position/rotation only          | Stationary upper+lower body                                                    | 
+| all                                                                                               | Everything (full freeze)             | Debugging                                                                      |
+| legs_and_root                                                                                     | Legs + Full root (position+rotation) | Ultra-stable locomotion                                                        |  
+| legs_static_waist_dynamic                                                                         | Legs                                 | Focue on upper body (waist can move only 2 legs freezed, different from lower) |  
+
 
 You can modified the code to Locked some parts yourself this is **Label of Each Joint**
-| Joint Index                                                                                       | Joint Name        | limit(rad)               |   |   |
-|---------------------------------------------------------------------------------------------------|-------------------|--------------------------|---|---|
-| 0                                                                                                 | L_LEG_HIP_PITCH   | -2.5307~2.8798           |   |   |
-| 1                                                                                                 | L_LEG_HIP_ROLL    | -0.5236~2.9671           |   |   |
-| 2                                                                                                 | L_LEG_HIP_YAW     | -2.7576~2.7576           |   |   |
-| 3                                                                                                 | L_LEG_KNEE        | -0.087267~2.8798         |   |   |
-| 4                                                                                                 | L_LEG_ANKLE_PITCH | -0.87267~0.5236          |   |   |
-| 5                                                                                                 | L_LEG_ANKLE_ROLL  | -0.2618~0.2618           |   |   |
-| 6                                                                                                 | R_LEG_HIP_PITCH   | -2.5307~2.8798           |   |   |
-| 7                                                                                                 | R_LEG_HIP_ROLL    | -2.9671~0.5236           |   |   |
-| 8                                                                                                 | R_LEG_HIP_YAW     | -2.7576~2.7576           |   |   |
-| 9                                                                                                 | R_LEG_KNEE        | -0.087267~2.8798         |   |   |
-| 10                                                                                                | R_LEG_ANKLE_PITCH | -0.87267~0.5236          |   |   |
-| 11                                                                                                | R_LEG_ANKLE_ROLL  | -0.2618~0.2618           |   |   |
-| 12                                                                                                | WAIST_YAW         | -2.618~2.618             |   |   |
-| 13                                                                                                | WAIST_ROLL        | -0.52~0.52               |   |   |
-| 14                                                                                                | WAIST_PITCH       | -0.52~0.52               |   |   |
-| 15                                                                                                | L_SHOULDER_PITCH  | -3.0892~2.6704           |   |   |
-| 16                                                                                                | L_SHOULDER_ROLL   | -1.5882~2.2515           |   |   |
-| 17                                                                                                | L_SHOULDER_YAW    | -2.618~2.618             |   |   |
-| 18                                                                                                | L_ELBOW           | -1.0472~2.0944           |   |   |
-| 19                                                                                                | L_WRIST_ROLL      | -1.972222054~1.972222054 |   |   |
-| 20                                                                                                | L_WRIST_PITCH     | -1.614429558~1.614429558 |   |   |
-| 21                                                                                                | L_WRIST_YAW       | -1.614429558~1.614429558 |   |   |
-| 22                                                                                                | R_SHOULDER_PITCH  | -3.0892~2.6704           |   |   |
-| 23                                                                                                | R_SHOULDER_ROLL   | -2.2515~1.5882           |   |   |
-| 24                                                                                                | R_SHOULDER_YAW    | -2.618~2.618             |   |   |
-| 25                                                                                                | R_ELBOW           | -1.0472~2.0944           |   |   |
-| 26                                                                                                | R_WRIST_ROLL      | -1.972222054~1.972222054 |   |   |
-| 27                                                                                                | R_WRIST_PITCH     | -1.614429558~1.614429558 |   |   |
-| 28                                                                                                | R_WRIST_YAW       | -1.614429558~1.614429558 |   |   |
+| Joint Index                                                                                       | Joint Name        | limit(rad)               |  
+|---------------------------------------------------------------------------------------------------|-------------------|--------------------------|
+| 0                                                                                                 | L_LEG_HIP_PITCH   | -2.5307~2.8798           | 
+| 1                                                                                                 | L_LEG_HIP_ROLL    | -0.5236~2.9671           |   
+| 2                                                                                                 | L_LEG_HIP_YAW     | -2.7576~2.7576           |   
+| 3                                                                                                 | L_LEG_KNEE        | -0.087267~2.8798         |   
+| 4                                                                                                 | L_LEG_ANKLE_PITCH | -0.87267~0.5236          |  
+| 5                                                                                                 | L_LEG_ANKLE_ROLL  | -0.2618~0.2618           |   
+| 6                                                                                                 | R_LEG_HIP_PITCH   | -2.5307~2.8798           |   
+| 7                                                                                                 | R_LEG_HIP_ROLL    | -2.9671~0.5236           |  
+| 8                                                                                                 | R_LEG_HIP_YAW     | -2.7576~2.7576           |
+| 9                                                                                                 | R_LEG_KNEE        | -0.087267~2.8798         |  
+| 10                                                                                                | R_LEG_ANKLE_PITCH | -0.87267~0.5236          |  
+| 11                                                                                                | R_LEG_ANKLE_ROLL  | -0.2618~0.2618           |  
+| 12                                                                                                | WAIST_YAW         | -2.618~2.618             |  
+| 13                                                                                                | WAIST_ROLL        | -0.52~0.52               |   
+| 14                                                                                                | WAIST_PITCH       | -0.52~0.52               |  
+| 15                                                                                                | L_SHOULDER_PITCH  | -3.0892~2.6704           |   
+| 16                                                                                                | L_SHOULDER_ROLL   | -1.5882~2.2515           |  
+| 17                                                                                                | L_SHOULDER_YAW    | -2.618~2.618             |  
+| 18                                                                                                | L_ELBOW           | -1.0472~2.0944           |   
+| 19                                                                                                | L_WRIST_ROLL      | -1.972222054~1.972222054 |   
+| 20                                                                                                | L_WRIST_PITCH     | -1.614429558~1.614429558 |  
+| 21                                                                                                | L_WRIST_YAW       | -1.614429558~1.614429558 |   
+| 22                                                                                                | R_SHOULDER_PITCH  | -3.0892~2.6704           |  
+| 23                                                                                                | R_SHOULDER_ROLL   | -2.2515~1.5882           |  
+| 24                                                                                                | R_SHOULDER_YAW    | -2.618~2.618             |  
+| 25                                                                                                | R_ELBOW           | -1.0472~2.0944           |   
+| 26                                                                                                | R_WRIST_ROLL      | -1.972222054~1.972222054 |  
+| 27                                                                                                | R_WRIST_PITCH     | -1.614429558~1.614429558 |  
+| 28                                                                                                | R_WRIST_YAW       | -1.614429558~1.614429558 |   
+
+
 
  Calculate Formula (**!!Consider the max angle of that Joint. Exceed it will damage the motor!!"")
+
 **Angle_rad=Angle_deg×(180 / pi)**   
 
 **Key Features:**
