@@ -5,7 +5,9 @@ from scipy.spatial.transform import Slerp
 import joblib
 import argparse
 from pathlib import Path
-DOF_AXIS_FILE = "./description/robots/g1/dof_axis.npy"
+#Updated a bit
+
+DOF_AXIS_FILE = Path(__file__).resolve().parent.parent / "description/robots/g1/dof_axis.npy"
 
 def lower_dof_interpolation(start_dof,end_dof,nframe):
     mid_frame = nframe // 2
@@ -98,9 +100,13 @@ def interpolate_motion(input_data, start_ext_frames, end_ext_frames, default_pos
     default_dof = default_pose[7:]
     default_rr_aa = R.from_quat(default_rr).as_euler('ZYX')
 
+    num_dof = dof_pos.shape[1]
+    # Initialize arrays for concatenation
+    start_root_trans = np.empty((0, 3))
+    start_rr = np.empty((0, 4))
+    start_dof = np.empty((0, num_dof))
 
     # 起始处插值
-    start_rr, start_dof = [], []
     if start_ext_frames > 0:
         # root trans
         start_z = np.linspace(default_rt[2],
@@ -143,8 +149,11 @@ def interpolate_motion(input_data, start_ext_frames, end_ext_frames, default_pos
             start_rr = R.from_euler('ZYX',interp_rots).as_quat()
 
 
+    # Initialize arrays for concatenation
+    end_root_trans = np.empty((0, 3))
+    end_rr = np.empty((0, 4))
+    end_dof = np.empty((0, num_dof))
     # 结束处插值
-    end_rr, end_dof = [], []
     if end_ext_frames > 0:
         # 根位移处理（仅Z轴插值）
         end_z = np.linspace(root_trans[-1, 2],
@@ -315,4 +324,3 @@ if __name__ == "__main__":
         fix_root_rot=fix_root_rot,
         knee_modify = knee_modify
     )
-    #hey
