@@ -190,8 +190,8 @@ Steps 1-9: Use GVHMR environment
 
 Step 10: Use PBHC environment
 
-## 🤖 Final Output: Trained Motion on Real Robot / Simulation
+## 🤖 Final Output: Trained Motion on Real Robot
 
-After completing training in PBHC, you can observe the learned motion either in simulation (Isaac Gym / Mujoco) or deployed onto the physical **Unitree G1** robot.
+After completing training in PBHC, and observe the learned motion either in simulation (Isaac Gym / Mujoco), Then deployed onto the physical **Unitree G1** robot.
 
 ![hippo](https://github.com/Book15011/GVHMR2PBHC/blob/main/Gif_Result.gif)
